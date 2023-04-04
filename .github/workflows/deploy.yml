@@ -40,4 +40,4 @@ jobs:
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-    - run: aws --region us-east-1 ecs update-service --cluster express-app --service express-app --task-definition express-app --force-new-deployment
+    - run: aws ecs --region us-east-1 update-service --cluster express-app --service express-app-01 --task-definition express-app-01 --force-new-deployment
